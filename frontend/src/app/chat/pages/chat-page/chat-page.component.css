@@ -33,6 +33,6 @@ form {
   display: flex;
 }
 
-input[type="text"] {
+input[type='text'] {
   flex: 1;
 }

@@ -4,14 +4,18 @@
   </div>
   <div class="chat-messages">
     <div #chatContainer class="messages">
-      <div *ngFor="let m of messages; let i = index">
-        <h3 *ngIf="showDateHeader(messages, i)">
+      @for( m of messages(); track $index; let i = $index) {
+      <div>
+        @if(showDateHeader(messages(), i)) {
+        <h3>
           {{ m.timestamp | date }}
         </h3>
+        }
         <p>
-          [{{ m.timestamp | date : "hh:mm" }}] {{ m.username }} : {{ m.text }}
+          [{{ m.timestamp | date : 'hh:mm' }}] {{ m.username }} : {{ m.text }}
         </p>
       </div>
+      }
     </div>
     <form (ngSubmit)="onPublishMessage()" [formGroup]="messageForm">
       <input name="message" type="text" formControlName="msg" />

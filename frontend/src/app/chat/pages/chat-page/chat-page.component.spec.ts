@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { ChatPageComponent } from "./chat-page.component";
+import { ChatPageComponent } from './chat-page.component';
 
-describe("ChatPageComponent", () => {
+describe('ChatPageComponent', () => {
   let component: ChatPageComponent;
   let fixture: ComponentFixture<ChatPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ChatPageComponent],
-      imports: [ReactiveFormsModule],
+      imports: [ReactiveFormsModule, ChatPageComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChatPageComponent);
@@ -18,7 +17,7 @@ describe("ChatPageComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
