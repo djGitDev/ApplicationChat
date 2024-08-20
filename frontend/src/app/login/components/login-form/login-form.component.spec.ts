@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { LoginFormComponent } from "./login-form.component";
+import { LoginFormComponent } from './login-form.component';
 
-describe("LoginFormComponent", () => {
+describe('LoginFormComponent', () => {
   let component: LoginFormComponent;
   let fixture: ComponentFixture<LoginFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LoginFormComponent],
-      imports: [ReactiveFormsModule],
+      imports: [ReactiveFormsModule, LoginFormComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginFormComponent);
@@ -18,7 +17,7 @@ describe("LoginFormComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

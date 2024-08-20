@@ -1,0 +1,19 @@
+<div>
+  <form class="form" (ngSubmit)="onLogin()" [formGroup]="loginForm">
+    <div>
+      <div>
+        <label
+          >Nom d'usager:
+          <input name="username" type="text" formControlName="username" />
+        </label>
+      </div>
+      <div>
+        <label
+          >Mot de passe:
+          <input name="password" type="password" formControlName="password"
+        /></label>
+      </div>
+    </div>
+    <div><button type="submit">Connexion</button></div>
+  </form>
+</div>
