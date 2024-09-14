@@ -1,5 +1,7 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import { UserCredentials } from '../model/user-credentials';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +11,7 @@ export class AuthenticationService {
 
   private username = signal<string | null>(null);
 
-  constructor() {
+  constructor(private router: Router) {
     this.username.set(localStorage.getItem(AuthenticationService.KEY));
   }
   
@@ -26,11 +28,14 @@ export class AuthenticationService {
     this.sauvegarderAuthentificateur(userCredentials);
     this.username.set(localStorage.getItem(AuthenticationService.KEY));
     console.log(this.username());
+    this.router.navigate(['chat']);
+
   }
 
   logout() {
     localStorage.removeItem(AuthenticationService.KEY);
     this.username.set(null);
+    this.router.navigate(['login']);
   }
 
   
