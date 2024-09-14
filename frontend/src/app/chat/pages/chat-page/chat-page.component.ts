@@ -1,9 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, effect } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { AuthenticationService } from 'src/app/login/services/authentication.service';
 import { Message } from '../../model/message.model';
 import { MessagesService } from '../../services/messages.service';
+
 
 @Component({
   selector: 'app-chat-page',
@@ -13,8 +14,10 @@ import { MessagesService } from '../../services/messages.service';
   imports: [ReactiveFormsModule, DatePipe],
 })
 export class ChatPageComponent {
-  messages = signal<Message[]>([]);
+
   username = this.authenticationService.getUsername();
+  messages = this.messagesService.getMessages();
+
 
   messageForm = this.fb.group({
     msg: '',
@@ -24,6 +27,7 @@ export class ChatPageComponent {
     private fb: FormBuilder,
     private messagesService: MessagesService,
     private authenticationService: AuthenticationService
+    
   ) {}
 
   onPublishMessage() {
@@ -56,6 +60,7 @@ export class ChatPageComponent {
   }
 
   onLogout() {
+    this.authenticationService.logout();
     // À faire
   }
 }
