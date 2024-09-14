@@ -29,7 +29,8 @@ export class AuthenticationService {
   }
 
   logout() {
-    // À faire
+    localStorage.removeItem(AuthenticationService.KEY);
+    this.username.set(null);
   }
 
   
