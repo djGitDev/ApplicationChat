@@ -1,5 +1,6 @@
-import { Injectable, Signal, signal } from '@angular/core';
+import { Injectable, Signal, effect, signal } from '@angular/core';
 import { Message } from '../model/message.model';
+
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,15 @@ import { Message } from '../model/message.model';
 export class MessagesService {
   messages = signal<Message[]>([]);
 
+   
+  
+
   postMessage(message: Message): void {
+    const messagesDejaAffichees = (this.getMessages())();
+    const listeMessagesMisAjour = [...messagesDejaAffichees,message];
+    this.messages.set(listeMessagesMisAjour);
+
+
     // À faire
   }
 
