@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './chat-page.component.html',
   styleUrls: ['./chat-page.component.css'],
   standalone: true,
-  imports: [ReactiveFormsModule, DatePipe, ComposantAffichageComponent, ComposantPublicationMsgComponent,MatIconModule],
+  imports: [ReactiveFormsModule, DatePipe, ComposantAffichageComponent, ComposantPublicationMsgComponent, MatIconModule],
 })
 export class ChatPageComponent   {
 

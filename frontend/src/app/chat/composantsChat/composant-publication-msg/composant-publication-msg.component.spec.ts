@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ComposantPublicationMsgComponent } from './composant-publication-msg.component';
+
 
 describe('ComposantPublicationMsgComponent', () => {
   let component: ComposantPublicationMsgComponent;
@@ -8,7 +8,7 @@ describe('ComposantPublicationMsgComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ComposantPublicationMsgComponent]
+      imports: [ComposantPublicationMsgComponent ]
     })
     .compileComponents();
 
