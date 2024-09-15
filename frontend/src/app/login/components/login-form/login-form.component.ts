@@ -3,13 +3,15 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { UserCredentials } from '../../model/user-credentials';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css'],
   standalone: true,
-  imports: [ReactiveFormsModule,MatFormFieldModule, MatInputModule],
+  imports: [ReactiveFormsModule,MatFormFieldModule, MatInputModule,MatButtonModule],
 })
 export class LoginFormComponent {
   loginForm = this.fb.group({
