@@ -5,6 +5,7 @@ import { ComposantAffichageComponent } from '../../composantsChat/composant-affi
 import { ComposantPublicationMsgComponent} from '../../composantsChat/composant-publication-msg/composant-publication-msg.component'
 import { AuthenticationService } from 'src/app/login/services/authentication.service';
 import { MessagesService } from '../../services/messages.service';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
@@ -12,10 +13,9 @@ import { MessagesService } from '../../services/messages.service';
   templateUrl: './chat-page.component.html',
   styleUrls: ['./chat-page.component.css'],
   standalone: true,
-  imports: [ReactiveFormsModule, DatePipe, ComposantAffichageComponent, ComposantPublicationMsgComponent],
+  imports: [ReactiveFormsModule, DatePipe, ComposantAffichageComponent, ComposantPublicationMsgComponent,MatIconModule],
 })
 export class ChatPageComponent   {
-
 
 
   username = this.authenticationService.getUsername();

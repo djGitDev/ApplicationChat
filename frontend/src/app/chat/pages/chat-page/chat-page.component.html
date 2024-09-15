@@ -1,6 +1,8 @@
 <div class="chat">
   <div class="chat-logout-button">
-    <button (click)="onLogout()">Quitter</button>
+    <button mat-icon-button (click)="onLogout()">Quitter
+      <mat-icon>send</mat-icon>
+    </button>
   </div>
   <div class="chat-messages">
     <app-composant-affichage [messages]= "messages()"></app-composant-affichage>
